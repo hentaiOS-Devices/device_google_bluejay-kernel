@@ -122,7 +122,6 @@ kernel/drivers/i2c/busses/i2c-exynos5.ko
 kernel/drivers/i2c/busses/i2c-acpm.ko
 kernel/drivers/i2c/i2c-dev.ko
 kernel/drivers/media/platform/exynos/mfc/exynos_mfc.ko
-kernel/drivers/media/platform/bigocean/bigocean.ko
 kernel/drivers/media/platform/exynos/smfc/smfc.ko
 kernel/drivers/power/reset/debug-reboot.ko
 kernel/drivers/thermal/samsung/gs101_thermal.ko
@@ -162,12 +161,12 @@ extra/aoc_usb_driver.ko
 extra/aoc_uwb_platform_drv.ko
 extra/aoc_uwb_service_dev.ko
 extra/audiometrics.ko
+extra/bigocean.ko
 extra/drivers/net/ieee802154/dw3000.ko
 extra/ese/st33spi.ko
 extra/ese/st54spi.ko
 extra/exynos-drm.ko
 extra/exynos-reboot.ko
-extra/fpc1020_platform_tee.ko
 extra/google-battery.ko
 extra/google-bms.ko
 extra/google-charger.ko
