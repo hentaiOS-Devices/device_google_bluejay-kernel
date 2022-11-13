@@ -73,6 +73,7 @@ kernel/drivers/soc/google/pixel_stat/pixel_stat_sysfs.ko
 kernel/drivers/soc/google/pixel_stat/mm/pixel_stat_mm.ko
 kernel/drivers/soc/google/dbgcore-dump.ko
 kernel/drivers/soc/google/exynos-seclog.ko
+kernel/drivers/soc/google/pkvm-s2mpu.ko
 kernel/drivers/soc/google/boot_control/boot_control_sysfs.ko
 kernel/drivers/regulator/max77826-gs-regulator.ko
 kernel/drivers/regulator/pmic_class.ko
