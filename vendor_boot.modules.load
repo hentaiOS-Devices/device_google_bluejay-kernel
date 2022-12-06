@@ -97,7 +97,6 @@ kernel/drivers/misc/gvotable.ko
 kernel/drivers/misc/sbb-mux/sbb-mux.ko
 kernel/drivers/misc/sscoredump/sscoredump.ko
 kernel/drivers/misc/bbdpl/bcm47765.ko
-kernel/drivers/misc/bbdpl/bbd.ko
 kernel/drivers/mfd/s2mpg10-mfd.ko
 kernel/drivers/mfd/s2mpg11-mfd.ko
 kernel/drivers/mfd/s2mpg1x-gpio.ko
