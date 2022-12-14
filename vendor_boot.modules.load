@@ -17,7 +17,7 @@ kernel/drivers/soc/google/debug/debug-snapshot-debug-kinfo.ko
 kernel/drivers/soc/google/debug/ehld.ko
 kernel/drivers/soc/google/debug/exynos-debug-test.ko
 kernel/drivers/soc/google/debug/pixel-debug-test.ko
-kernel/drivers/soc/google/debug/gs101-itmon.ko
+kernel/drivers/soc/google/debug/itmon.ko
 kernel/drivers/soc/google/debug/exynos-coresight.ko
 kernel/drivers/soc/google/debug/exynos-ecc-handler.ko
 kernel/drivers/soc/google/debug/exynos-coresight-etm.ko
@@ -35,6 +35,7 @@ kernel/drivers/soc/google/vh/kernel/mm/vh_mm.ko
 kernel/drivers/soc/google/vh/kernel/cgroup/vh_cgroup.ko
 kernel/drivers/soc/google/vh/kernel/i2c/vh_i2c.ko
 kernel/drivers/soc/google/vh/kernel/pixel_em/pixel_em.ko
+kernel/drivers/soc/google/vh/kernel/metrics/pixel_metrics.ko
 kernel/drivers/soc/google/gs-chipid.ko
 kernel/drivers/soc/google/cal-if/cmupmucal.ko
 kernel/drivers/soc/google/exynos-pmu-if.ko
@@ -75,6 +76,7 @@ kernel/drivers/soc/google/dbgcore-dump.ko
 kernel/drivers/soc/google/exynos-seclog.ko
 kernel/drivers/soc/google/pkvm-s2mpu.ko
 kernel/drivers/soc/google/boot_control/boot_control_sysfs.ko
+kernel/drivers/soc/google/kernel-top.ko
 kernel/drivers/regulator/max77826-gs-regulator.ko
 kernel/drivers/regulator/pmic_class.ko
 kernel/drivers/regulator/s2mpg10-regulator.ko
@@ -99,7 +101,7 @@ kernel/drivers/misc/sscoredump/sscoredump.ko
 kernel/drivers/misc/bbdpl/bcm47765.ko
 kernel/drivers/mfd/s2mpg10-mfd.ko
 kernel/drivers/mfd/s2mpg11-mfd.ko
-kernel/drivers/mfd/s2mpg1x-gpio.ko
+kernel/drivers/mfd/s2mpg1x-gpio-gs101.ko
 kernel/drivers/dma-buf/heaps/samsung/samsung_dma_heap.ko
 kernel/drivers/scsi/ufs/ufs-exynos-core.ko
 kernel/drivers/scsi/ufs/ufs-pixel-fips140.ko
@@ -130,7 +132,7 @@ kernel/drivers/i2c/i2c-dev.ko
 kernel/drivers/media/platform/exynos/mfc/exynos_mfc.ko
 kernel/drivers/media/platform/exynos/smfc/smfc.ko
 kernel/drivers/power/reset/debug-reboot.ko
-kernel/drivers/thermal/samsung/gs101_thermal.ko
+kernel/drivers/thermal/samsung/gs_thermal.ko
 kernel/drivers/thermal/samsung/gpu_cooling.ko
 kernel/drivers/thermal/google/google_bcl.ko
 kernel/drivers/thermal/google/gs101_spmic_thermal.ko
@@ -150,8 +152,7 @@ kernel/drivers/trusty/trusty-log.ko
 kernel/drivers/trusty/trusty-test.ko
 kernel/drivers/trusty/trusty-virtio.ko
 kernel/drivers/trusty/trusty-ipc.ko
-kernel/drivers/bts/exynos-bts.ko
-kernel/drivers/bts/exynos-btsopsgs101.ko
+kernel/drivers/bts/bts.ko
 kernel/sound/soc/codecs/snd-soc-max98357a.ko
 kernel/sound/soc/codecs/snd-soc-rl6231.ko
 kernel/sound/soc/codecs/snd-soc-rt5682.ko
@@ -167,7 +168,6 @@ extra/aoc_usb_driver.ko
 extra/aoc_uwb_platform_drv.ko
 extra/aoc_uwb_service_dev.ko
 extra/audiometrics.ko
-extra/bigocean.ko
 extra/drivers/net/ieee802154/dw3000.ko
 extra/ese/st33spi.ko
 extra/ese/st54spi.ko
