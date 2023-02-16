@@ -178,7 +178,6 @@ extra/google-bms.ko
 extra/google-charger.ko
 extra/google-cpm.ko
 extra/google_dual_batt_gauge.ko
-extra/hall_sensor.ko
 extra/heatmap.ko
 extra/mailbox-wc.ko
 extra/mali_kbase.ko
@@ -195,7 +194,6 @@ extra/net/mcps802154/mcps802154_region_nfcc_coex.ko
 extra/nitrous.ko
 extra/overheat_mitigation.ko
 extra/p9221.ko
-extra/panel-samsung-s6e3fc3_6a.ko
 extra/panel/panel-samsung-drv.ko
 extra/panel/panel-samsung-emul.ko
 extra/panel/panel-samsung-s6e3fc3.ko
