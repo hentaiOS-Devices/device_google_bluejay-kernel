@@ -10,6 +10,7 @@ kernel/drivers/pci/controller/dwc/pcie-exynos-gs101-rc-cal.ko
 kernel/drivers/clk/samsung/clk_exynos.ko
 kernel/drivers/dma/pl330.ko
 kernel/drivers/dma/samsung-dma.ko
+kernel/drivers/soc/google/debug/itmon.ko
 kernel/drivers/soc/google/vh/kernel/sched/vh_sched.ko
 kernel/drivers/soc/google/vh/kernel/sched/sched_tp.ko
 kernel/drivers/soc/google/vh/kernel/sched/vh_preemptirq_long.ko
