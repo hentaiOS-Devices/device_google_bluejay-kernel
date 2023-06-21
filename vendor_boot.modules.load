@@ -126,7 +126,6 @@ kernel/drivers/devfreq/google/memlat-devfreq.ko
 kernel/drivers/iio/power/odpm.ko
 kernel/drivers/perf/arm_dsu_pmu.ko
 kernel/drivers/trusty/trusty-core.ko
-kernel/drivers/trusty/trusty-irq.ko
 kernel/drivers/trusty/trusty-log.ko
 kernel/drivers/trusty/trusty-test.ko
 kernel/drivers/trusty/trusty-virtio.ko
