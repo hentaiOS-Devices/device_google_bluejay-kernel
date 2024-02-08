@@ -44,6 +44,7 @@ kernel/drivers/soc/google/exynos-cpuhp.ko
 kernel/drivers/soc/google/exynos-pd.ko
 kernel/drivers/soc/google/exynos-pd-dbg.ko
 kernel/drivers/soc/google/exynos-pd_el3.ko
+kernel/drivers/soc/google/exynos-pd_hsi0.ko
 kernel/drivers/soc/google/exynos-pm.ko
 kernel/drivers/soc/google/exynos-cpupm.ko
 kernel/drivers/soc/google/ect_parser.ko
