@@ -21,19 +21,36 @@
 #ifdef __linux__
 #include <linux/types.h>
 #endif
-#include "drm.h"
+#include <drm/drm.h>
+#include <drm/drm_fourcc_gs101.h>
 #ifdef __cplusplus
 extern "C" {
 #endif
 #define DRM_SAMSUNG_HDR_EOTF_LUT_LEN 129
+#define DRM_SAMSUNG_HDR_EOTF_V2P2_LUT_LEN 20
 struct hdr_eotf_lut {
   __u16 posx[DRM_SAMSUNG_HDR_EOTF_LUT_LEN];
   __u32 posy[DRM_SAMSUNG_HDR_EOTF_LUT_LEN];
 };
+struct hdr_v2p2_element {
+  __u16 even;
+  __u16 odd;
+};
+struct hdr_eotf_lut_v2p2 {
+  struct hdr_v2p2_element ts[DRM_SAMSUNG_HDR_EOTF_V2P2_LUT_LEN];
+  struct hdr_v2p2_element vs[DRM_SAMSUNG_HDR_EOTF_V2P2_LUT_LEN];
+  __u16 scaler;
+  bool lut_en;
+};
 #define DRM_SAMSUNG_HDR_OETF_LUT_LEN 33
+#define DRM_SAMSUNG_HDR_OETF_V2P2_LUT_LEN 24
 struct hdr_oetf_lut {
   __u16 posx[DRM_SAMSUNG_HDR_OETF_LUT_LEN];
   __u16 posy[DRM_SAMSUNG_HDR_OETF_LUT_LEN];
+};
+struct hdr_oetf_lut_v2p2 {
+  struct hdr_v2p2_element ts[DRM_SAMSUNG_HDR_OETF_V2P2_LUT_LEN];
+  struct hdr_v2p2_element vs[DRM_SAMSUNG_HDR_OETF_V2P2_LUT_LEN];
 };
 #define DRM_SAMSUNG_HDR_GM_DIMENS 3
 struct hdr_gm_data {
@@ -41,6 +58,7 @@ struct hdr_gm_data {
   __u32 offsets[DRM_SAMSUNG_HDR_GM_DIMENS];
 };
 #define DRM_SAMSUNG_HDR_TM_LUT_LEN 33
+#define DRM_SAMSUNG_HDR_TM_V2P2_LUT_LEN 24
 struct hdr_tm_data {
   __u16 coeff_r;
   __u16 coeff_g;
@@ -51,6 +69,17 @@ struct hdr_tm_data {
   __u16 rng_y_max;
   __u16 posx[DRM_SAMSUNG_HDR_TM_LUT_LEN];
   __u32 posy[DRM_SAMSUNG_HDR_TM_LUT_LEN];
+};
+struct hdr_tm_data_v2p2 {
+  __u16 coeff_00;
+  __u16 coeff_01;
+  __u16 coeff_02;
+  __u16 ymix_tf;
+  __u16 ymix_vf;
+  __u16 ymix_slope;
+  __u16 ymix_dv;
+  struct hdr_v2p2_element ts[DRM_SAMSUNG_HDR_TM_V2P2_LUT_LEN];
+  struct hdr_v2p2_element vs[DRM_SAMSUNG_HDR_TM_V2P2_LUT_LEN];
 };
 #define DRM_SAMSUNG_CGC_LUT_REG_CNT 2457
 struct cgc_lut {
@@ -146,20 +175,53 @@ struct histogram_weights {
 struct histogram_bins {
   __u16 data[HISTOGRAM_BIN_COUNT];
 };
+enum histogram_prog_pos {
+  POST_DQE,
+  PRE_DQE,
+};
+enum histogram_flags {
+  HISTOGRAM_FLAGS_BLOCKED_ROI = 0x20,
+};
+struct histogram_channel_config {
+  struct histogram_roi roi;
+  struct histogram_weights weights;
+  enum histogram_prog_pos pos;
+  __u32 threshold;
+  struct histogram_roi blocked_roi;
+  __u32 flags;
+};
 #define EXYNOS_DRM_HISTOGRAM_EVENT 0x80000000
+#define EXYNOS_DRM_HISTOGRAM_CHANNEL_EVENT 0x80000001
 struct exynos_drm_histogram_event {
   struct drm_event base;
   struct histogram_bins bins;
   __u32 crtc_id;
 };
-enum exynos_prog_pos {
-  POST_DQE,
-  PRE_DQE,
+struct exynos_drm_histogram_channel_event {
+  struct drm_event base;
+  struct histogram_bins bins;
+  __u16 crtc_id;
+  __u16 hist_id;
 };
 #define EXYNOS_HISTOGRAM_REQUEST 0x0
 #define EXYNOS_HISTOGRAM_CANCEL 0x1
+#define EXYNOS_HISTOGRAM_CHANNEL_REQUEST 0x20
+#define EXYNOS_HISTOGRAM_CHANNEL_CANCEL 0x21
+#define EXYNOS_HISTOGRAM_CHANNEL_DATA_REQUEST 0x30
+struct exynos_drm_histogram_channel_request {
+  __u32 crtc_id;
+  __u32 hist_id;
+};
+struct exynos_drm_histogram_channel_data_request {
+  __u16 crtc_id;
+  __u16 hist_id;
+  struct histogram_bins * bins;
+};
 #define DRM_IOCTL_EXYNOS_HISTOGRAM_REQUEST DRM_IOW(DRM_COMMAND_BASE + EXYNOS_HISTOGRAM_REQUEST, __u32)
 #define DRM_IOCTL_EXYNOS_HISTOGRAM_CANCEL DRM_IOW(DRM_COMMAND_BASE + EXYNOS_HISTOGRAM_CANCEL, __u32)
+#define DRM_IOCTL_EXYNOS_HISTOGRAM_CHANNEL_REQUEST DRM_IOW(DRM_COMMAND_BASE + EXYNOS_HISTOGRAM_CHANNEL_REQUEST, struct exynos_drm_histogram_channel_request)
+#define DRM_IOCTL_EXYNOS_HISTOGRAM_CHANNEL_CANCEL DRM_IOW(DRM_COMMAND_BASE + EXYNOS_HISTOGRAM_CHANNEL_CANCEL, struct exynos_drm_histogram_channel_request)
+#define DRM_IOCTL_EXYNOS_HISTOGRAM_CHANNEL_DATA_REQUEST DRM_IOW(DRM_COMMAND_BASE + EXYNOS_HISTOGRAM_CHANNEL_DATA_REQUEST, struct exynos_drm_histogram_channel_data_request)
 #ifdef __cplusplus
 }
 #endif
