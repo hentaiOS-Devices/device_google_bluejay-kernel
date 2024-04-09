@@ -96,7 +96,7 @@ extra/private/google-modules/soc/gs/drivers/misc/sbb-mux/sbb-mux.ko
 extra/private/google-modules/soc/gs/drivers/misc/sscoredump/sscoredump.ko
 extra/private/google-modules/soc/gs/drivers/mfd/s2mpg10-mfd.ko
 extra/private/google-modules/soc/gs/drivers/mfd/s2mpg11-mfd.ko
-extra/private/google-modules/soc/gs/drivers/mfd/s2mpg1x-gpio.ko
+extra/private/google-modules/soc/gs/drivers/mfd/s2mpg1x-gpio-gs101.ko
 extra/private/google-modules/soc/gs/drivers/dma-buf/heaps/samsung/samsung_dma_heap.ko
 extra/private/google-modules/soc/gs/drivers/ufs/ufs-exynos-gs.ko
 extra/private/google-modules/soc/gs/drivers/ufs/ufs-pixel-fips140.ko
