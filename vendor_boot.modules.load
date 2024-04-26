@@ -69,6 +69,7 @@ extra/private/google-modules/soc/gs/drivers/soc/google/cpif/cpif_page.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/cpif/cpif.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/cpif/cp_thermal_zone.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/eh/eh.ko
+extra/private/google-modules/soc/gs/drivers/soc/google/gcma/gcma.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/s2mpu/s2mpu.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/hardlockup-debug.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/hardlockup-watchdog.ko
@@ -133,9 +134,10 @@ extra/private/google-modules/soc/gs/drivers/watchdog/s3c2410_wdt.ko
 extra/private/google-modules/soc/gs/drivers/cpufreq/exynos-acme.ko
 extra/private/google-modules/soc/gs/drivers/clocksource/exynos_mct.ko
 extra/private/google-modules/soc/gs/drivers/devfreq/google/exynos_devfreq.ko
-extra/private/google-modules/soc/gs/drivers/devfreq/google/arm-memlat-mon-legacy.ko
-extra/private/google-modules/soc/gs/drivers/devfreq/google/governor_memlat.ko
-extra/private/google-modules/soc/gs/drivers/devfreq/google/memlat-devfreq.ko
+extra/private/google-modules/soc/gs/drivers/performance/gs_perf_mon/gs_perf_mon.ko
+extra/private/google-modules/soc/gs/drivers/performance/lat_governors/gs_governor_memlat.ko
+extra/private/google-modules/soc/gs/drivers/performance/lat_governors/gs_governor_dsulat.ko
+extra/private/google-modules/soc/gs/drivers/performance/lat_governors/gs_governor_utils.ko
 extra/private/google-modules/soc/gs/drivers/iio/power/odpm_legacy.ko
 extra/private/google-modules/soc/gs/drivers/bts/bts.ko
 extra/private/google-modules/soc/gs/drivers/block/zram/zram_gs.ko
