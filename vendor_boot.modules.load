@@ -79,6 +79,7 @@ extra/private/google-modules/soc/gs/drivers/soc/google/dbgcore-dump.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/exynos-seclog.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/pkvm-s2mpu/pkvm-s2mpu/pkvm-s2mpu.ko
 extra/private/google-modules/soc/gs/drivers/soc/google/boot_control/boot_control_sysfs.ko
+extra/private/google-modules/soc/gs/drivers/soc/google/perf_trace_counters.ko
 extra/private/google-modules/soc/gs/drivers/regulator/max77826-gs-regulator.ko
 extra/private/google-modules/soc/gs/drivers/regulator/pmic_class.ko
 extra/private/google-modules/soc/gs/drivers/regulator/s2mpg10-regulator.ko
