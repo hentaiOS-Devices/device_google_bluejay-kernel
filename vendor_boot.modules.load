@@ -142,7 +142,6 @@ extra/private/google-modules/soc/gs/drivers/performance/lat_governors/gs_governo
 extra/private/google-modules/soc/gs/drivers/iio/power/odpm_legacy.ko
 extra/private/google-modules/soc/gs/drivers/bts/bts.ko
 extra/private/google-modules/soc/gs/drivers/block/zram/zram_gs.ko
-extra/private/google-modules/soc/gs/drivers/block/zram/zcomp_cpu.ko
 extra/private/google-modules/soc/gs/drivers/block/zram/zcomp_eh.ko
 extra/private/devices/google/bluejay/display/panel-samsung-s6e3fc3_6a.ko
 extra/private/google-modules/amplifiers/audiometrics/audiometrics.ko
