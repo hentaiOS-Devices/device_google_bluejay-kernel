@@ -1,21 +1,9 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
+/*
+ * This file is auto-generated. Modifications will be lost.
+ *
+ * See https://android.googlesource.com/platform/bionic/+/master/libc/kernel/
+ * for more information.
+ */
 #ifndef __SOUND_ASOUND_H
 #define __SOUND_ASOUND_H
 #ifdef __linux__
@@ -236,6 +224,7 @@ typedef int __bitwise snd_pcm_subformat_t;
 #define SNDRV_PCM_INFO_HAS_LINK_ESTIMATED_ATIME 0x04000000
 #define SNDRV_PCM_INFO_HAS_LINK_SYNCHRONIZED_ATIME 0x08000000
 #define SNDRV_PCM_INFO_EXPLICIT_SYNC 0x10000000
+#define SNDRV_PCM_INFO_NO_REWINDS 0x20000000
 #define SNDRV_PCM_INFO_DRAIN_TRIGGER 0x40000000
 #define SNDRV_PCM_INFO_FIFO_IN_FRAMES 0x80000000
 #if __BITS_PER_LONG == 32 && defined(__USE_TIME_BITS64)
@@ -883,7 +872,7 @@ struct snd_ctl_elem_value {
 struct snd_ctl_tlv {
   unsigned int numid;
   unsigned int length;
-  unsigned int tlv[0];
+  unsigned int tlv[];
 };
 #define SNDRV_CTL_IOCTL_PVERSION _IOR('U', 0x00, int)
 #define SNDRV_CTL_IOCTL_CARD_INFO _IOR('U', 0x01, struct snd_ctl_card_info)

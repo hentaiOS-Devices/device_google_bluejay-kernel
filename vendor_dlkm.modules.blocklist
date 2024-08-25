@@ -6,7 +6,6 @@ blocklist ftm5
 blocklist cs40l26_i2c
 blocklist mali_kutf
 blocklist mali_kutf_clk_rate_trace_test_portal
-blocklist pktgen
 blocklist nvt_touch
 blocklist sec_touch
 blocklist snd-soc-cs35l41-i2c
@@ -16,4 +15,6 @@ blocklist st54spi
 blocklist uwb_desense.ko
 blocklist uwb-hal.ko
 blocklist uwbcore.ko
+blocklist sscoredump_sample_test.ko
+blocklist sscoredump_test.ko
 blocklist aoc_unit_test_dev
