@@ -9,7 +9,7 @@
 #define _BIGO_H_
 
 #include <linux/ioctl.h>
-#define __user
+
 #include <linux/types.h>
 
 /*
@@ -30,6 +30,7 @@ struct bigo_ioc_mapping {
 	__u32 iova;
 	__u32 offset;
 	__u32 size;
+	__u32 skip_cmo;
 };
 
 struct bigo_ioc_frmsize {
@@ -37,9 +38,28 @@ struct bigo_ioc_frmsize {
 	__u32 width;
 };
 
+struct bigo_ioc_misc {
+	__u32 cmd;
+	__u32 ret;
+	__u32 data0;
+	__u32 data1;
+	__u32 data2;
+	__u32 data3;
+};
+
 struct bigo_cache_info {
 	__u32 size;
 	__u32 pid;
+};
+
+/**
+ * @flags: Set of access flags defined in uapi/linux/dma-buf.h
+ */
+struct bigo_buf_sync {
+	int fd;
+	__u32 offset;
+	__u32 size;
+	__u64 flags;
 };
 
 /*
@@ -65,6 +85,8 @@ enum bigo_cmd_id {
 	BIGO_CMD_GET_CACHE_INFO,
 	BIGO_CMD_CONFIG_SECURE,
 	BIGO_CMD_CONFIG_PRIORITY,
+	BIGO_CMD_DMA_SYNC,
+	BIGO_CMD_MISC,
 	BIGO_CMD_MAXNR,
 };
 /* <END OF HELPERS> */
@@ -80,5 +102,7 @@ enum bigo_cmd_id {
 #define BIGO_IOCX_ABORT _BIGO_IO(BIGO_CMD_ABORT)
 #define BIGO_IOCX_CONFIG_SECURE _BIGO_IOW(BIGO_CMD_CONFIG_SECURE, __u32)
 #define BIGO_IOCX_CONFIG_PRIORITY _BIGO_IOW(BIGO_CMD_CONFIG_PRIORITY, __s32)
+#define BIGO_IOCX_DMA_SYNC _BIGO_IOW(BIGO_CMD_DMA_SYNC, struct bigo_buf_sync)
+#define BIGO_IOCX_MISC _BIGO_IOW(BIGO_CMD_MISC, struct bigo_ioc_misc)
 
 #endif /* _BIGO_H_ */
